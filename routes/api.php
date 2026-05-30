@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DropdownController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// Update these lines in routes/web.php to add the 'api/' prefix:
+Route::post('api/fetch-states', [DropdownController::class, 'fetchState']);
+Route::post('api/fetch-cities', [DropdownController::class, 'fetchCity']);
